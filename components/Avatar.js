@@ -7,7 +7,7 @@ function Avatar({username,logoutOnpress}) {
 
     return (
         <Image 
-        src={`https://avatars.dicebear.com/api/croodles-neutral/${user.getUsername()}.svg`}
+        src={`https://avatars.dicebear.com/api/open-peeps/${user.getUsername()}.svg`}
         width={100} height={100} 
         onClick={() => logoutOnpress && logout()}
         />
