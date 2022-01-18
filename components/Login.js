@@ -14,11 +14,11 @@ function Login() {
                 <Image className=' 
                 rounded-full'
                 src={avatar}
-                height={100}
-                width={100}/>
+                height={200}
+                width={200}/>
 
                 <button  onClick={authenticate} className='bg-purple-400 text-white
-                 rounded-2xl animate-pulse p-3 ' >Login to metaverse</button>
+                 rounded-2xl animate-pulse p-3 ' >Login to Chat</button>
             </div>
             <div className='h-screen w-full'>
                 <Image 

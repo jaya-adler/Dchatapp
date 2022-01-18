@@ -1,13 +1,30 @@
 import Image from 'next/image';
-import React from 'react';
+import React ,{useState} from 'react';
+import axios from 'axios';
 import { useMoralis } from 'react-moralis';
 import TimeagoReact from 'timeago-react';
 
 
-function Usermsg({message}) {
+function Fileview({message,filelink}) {
     const {user} = useMoralis();
+    var isimage='', boolimg=false;
     const isusermsg = message.get('ethAddress') === user.get('ethAddress');
-    
+   
+    // axios.get(filelink).then(res =>{
+    //          isimage= res.headers['content-type'];
+    //         console.log(isimage);
+    //         return isimage
+    // }).then(imgtype =>{
+    //     console.log(imgtype)
+    //     if(imgtype.match('image')!==null){
+    //         boolimg=  true;
+    //         console.log(isimage,boolimg);
+    //     }
+    //     else{
+    //         boolimg= false;
+    //         console.log(isimage,boolimg);
+    //     }
+    // })
 
     return (
         <div className={`flex relative items-end 
@@ -21,10 +38,15 @@ function Usermsg({message}) {
             />
         </div>
 
-        <p className={`p-2 border-2 -ml-5 rounded-full font-bold
+        <div className={`flex items-center space-x-2 p-2 border-2 -ml-5 rounded-md font-bold w-fit
         ${isusermsg?"text-green-800 rounded-br-none border-green-300"
         :"text-blue-800 rounded-bl-none border-blue-300"}`}
-        >{message.get('message')}</p>
+        >  
+            <Image className='rounded-md'
+            src={filelink}
+            width={300} height={150}/>
+            <a className='relative' href={filelink} download="image.png" >➩</a>
+        </div>
         
         <TimeagoReact className={`text-[10px] 
             text-gray-500 italic ${isusermsg && "order-first"}`} 
@@ -41,4 +63,4 @@ function Usermsg({message}) {
     )
 }
 
-export default Usermsg
+export default Fileview;

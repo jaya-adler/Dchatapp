@@ -5,6 +5,6 @@ module.exports = {
     MORALIS_SERVER_URL : "https://t6maj3gcxmfm.usemoralis.com:2053/server",
   },
   images: {
-    domains: ['avatars.dicebear.com'],
+    domains: ['avatars.dicebear.com','ipfs.moralis.io'],
   },
 }
