@@ -32,7 +32,7 @@ function Fileview({message,filelink}) {
         ${isusermsg && "justify-end"}`}>
 
         <div className={`rounded-full border-2 ml-2 ${isusermsg ? "order-last border-green-500 ":"border-blue-500"}`}>
-            <Image 
+            <Image alt='Avatar'
              src={`https://avatars.dicebear.com/api/open-peeps/${message.get('username')}.svg`}
              width={20} height={20} 
             />
@@ -44,6 +44,7 @@ function Fileview({message,filelink}) {
         >  
             <Image className='rounded-md'
             src={filelink}
+            alt='file'
             width={300} height={150}/>
             <a className='relative' href={filelink} download="image.png" >➩</a>
         </div>

@@ -6,7 +6,7 @@ function Avatar({username,logoutOnpress}) {
      const {user, logout} =  useMoralis();
 
     return (
-        <Image 
+        <Image alt='avatar'
         src={`https://avatars.dicebear.com/api/open-peeps/${user.getUsername()}.svg`}
         width={100} height={100} 
         onClick={() => logoutOnpress && logout()}

@@ -62,11 +62,11 @@ function Messages() {
             <div className='flex items-center fixed'>
                 <Sendmessage endofMessages={endofMessages}/>
                 <div className='flex flex-col items-center font-sm right-6
-                        fixed bottom-32  border-4  rounded-lg
+                        fixed bottom-32  border-4  rounded-lg mx-8
                         border-blue-300   hover:shadow-2xl bg-slate-600'>
                     <button className='w-fit text-white 
                     hover:opacity-50 font-bold' onClick={uploadfile}>Send File</button>
-                    <input className='w-fit' onChange={(e)=>setfileinp(e.target.files[0])} className='w-fit' type='file'placeholder=''/>
+                    <input className='w-fit  mx-auto' onChange={(e)=>setfileinp(e.target.files[0])} type='file' placeholder=''/>
                 </div>
             </div>
 

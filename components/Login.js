@@ -11,9 +11,10 @@ function Login() {
         <div className="text-lg">
             <div className='flex flex-col absolute h-4/6 
             z-10 justify-center items-center w-full space-y-4'>
-                <Image className=' 
-                rounded-full'
+                <Image 
+                className='rounded-full'
                 src={avatar}
+                alt='Logo'
                 height={200}
                 width={200}/>
 
@@ -22,6 +23,7 @@ function Login() {
             </div>
             <div className='h-screen w-full'>
                 <Image 
+                alt='background'
                 src={meta} 
                 layout='fill'
                 objectFit='cover'/>
