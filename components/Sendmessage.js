@@ -24,7 +24,7 @@ function Sendmessage({endofMessages}) {
     }
     return (
         <form  className='flex  items-center max-w-screen-md px-6 py-4
-        fixed bottom-12 w-11/12 border-4 p-3 rounded-full space-x-2
+        fixed bottom-12 w-11/12 left-8 border-4 p-3 rounded-full space-x-2
         border-blue-300 z-50  hover:shadow-2xl bg-slate-600'>
             <input onChange={(e)=>{setmessage(e.target.value)}}
             className=' outline-none bg-transparent
