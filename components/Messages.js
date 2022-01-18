@@ -53,7 +53,7 @@ function Messages() {
                 {data.map((message) => {
                     // console.log(message.get('message').match(matchexp)===null)
                     if(message.get('message').match(matchexp)===null) {return (<Usermsg key={message.id} message={message}/>)}
-                    else{ return (<Fileview message={message} filelink={message.get('message').replace(matchexp,'')}/>)}
+                    else{ return (<Fileview key={message.id} message={message} filelink={message.get('message').replace(matchexp,'')}/>)}
                 })}
             </div>
             <div ref={endofMessages} className='text-center pb-52 font-bold'>
@@ -62,8 +62,8 @@ function Messages() {
             <div className='flex items-center fixed'>
                 <Sendmessage endofMessages={endofMessages}/>
                 <div className='flex flex-col items-center font-sm right-6
-        fixed bottom-32  border-4  rounded-lg
-        border-blue-300   hover:shadow-2xl bg-slate-600'>
+                        fixed bottom-32  border-4  rounded-lg
+                        border-blue-300   hover:shadow-2xl bg-slate-600'>
                     <button className='w-fit text-white 
                     hover:opacity-50 font-bold' onClick={uploadfile}>Send File</button>
                     <input className='w-fit' onChange={(e)=>setfileinp(e.target.files[0])} className='w-fit' type='file'placeholder=''/>
