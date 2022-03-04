@@ -4,7 +4,7 @@ import { useMoralis } from 'react-moralis';
 function Sendmessage({endofMessages}) {
     const {user,Moralis}=useMoralis();
     const [message, setmessage] = useState("");
-    const sendMessage = (e)=>{
+    const sendMessage = async (e)=>{
         e.preventDefault();
         if(!message) return;
         const Messages = Moralis.Object.extend("Messages");

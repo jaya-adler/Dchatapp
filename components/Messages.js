@@ -5,6 +5,7 @@ import { useMoralisQuery } from 'react-moralis';
 import Usermsg from './Usermsg';
 import {useMoralis} from 'react-moralis'
 import Fileview from './Fileview';
+import { Input } from 'postcss';
 
 
 const DurationData = 15;
@@ -16,6 +17,7 @@ function Messages() {
     // const [fileupload, setfileupload] = useState('');
     const endofMessages = useRef(null);
      const uploadfile = async ()  =>{
+        
         const data = fileinp;
         const file = new Moralis.File(data.name, data);
         await file.saveIPFS();
@@ -62,11 +64,12 @@ function Messages() {
             <div className='flex items-center fixed'>
                 <Sendmessage endofMessages={endofMessages}/>
                 <div className='flex flex-col items-center font-sm right-6
-                        fixed bottom-12  border-4  rounded-lg mx-8
+                        fixed bottom-12  border-4  rounded-full mx-8 justify-between 
                         border-blue-300   hover:shadow-2xl bg-slate-600'>
-                    <button className='w-fit text-white 
+                    <button className='w-fit text-white cursor-pointer
                     hover:opacity-50 font-bold' onClick={uploadfile}>Send File</button>
-                    <input className='w-fit  mx-auto' onChange={(e)=>setfileinp(e.target.files[0])} type='file' placeholder=''/>
+                    
+                    <input className='w-fit  mx-auto pl-5' onChange={(e)=>setfileinp(e.target.files[0])} type='file' placeholder=''/>
                 </div>
             </div>
 

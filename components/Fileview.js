@@ -46,7 +46,7 @@ function Fileview({message,filelink}) {
             src={filelink}
             alt='file'
             width={300} height={150}/>
-            <a className='relative' href={filelink} download="image.png" >➩</a>
+            <a className='relative' href={filelink} download="file" >➩</a>
         </div>
         
         <TimeagoReact className={`text-[10px] 
